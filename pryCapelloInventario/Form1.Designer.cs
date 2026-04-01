@@ -38,15 +38,16 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblIngreso = new System.Windows.Forms.Label();
-            this.txtIngreso = new System.Windows.Forms.TextBox();
-            this.txtEgreso = new System.Windows.Forms.TextBox();
             this.lblEgreso = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblStockActual = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.maskedTxtIngreso = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTxtEgreso = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblSimboloPrecio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBoxInventario.SuspendLayout();
             this.SuspendLayout();
@@ -62,15 +63,16 @@
             // 
             // gBoxInventario
             // 
+            this.gBoxInventario.Controls.Add(this.lblSimboloPrecio);
+            this.gBoxInventario.Controls.Add(this.maskedTextBox1);
+            this.gBoxInventario.Controls.Add(this.maskedTxtEgreso);
+            this.gBoxInventario.Controls.Add(this.maskedTxtIngreso);
             this.gBoxInventario.Controls.Add(this.btnCancelar);
             this.gBoxInventario.Controls.Add(this.btnConfirmar);
-            this.gBoxInventario.Controls.Add(this.txtPrecio);
             this.gBoxInventario.Controls.Add(this.lblPrecio);
             this.gBoxInventario.Controls.Add(this.lblStockActual);
             this.gBoxInventario.Controls.Add(this.lblStock);
-            this.gBoxInventario.Controls.Add(this.txtEgreso);
             this.gBoxInventario.Controls.Add(this.lblEgreso);
-            this.gBoxInventario.Controls.Add(this.txtIngreso);
             this.gBoxInventario.Controls.Add(this.lblIngreso);
             this.gBoxInventario.Controls.Add(this.txtCategoria);
             this.gBoxInventario.Controls.Add(this.lblCategoria);
@@ -78,9 +80,9 @@
             this.gBoxInventario.Controls.Add(this.lblCódigo);
             this.gBoxInventario.Controls.Add(this.txtDecrip);
             this.gBoxInventario.Controls.Add(this.lblProducto);
-            this.gBoxInventario.Location = new System.Drawing.Point(112, 57);
+            this.gBoxInventario.Location = new System.Drawing.Point(109, 57);
             this.gBoxInventario.Name = "gBoxInventario";
-            this.gBoxInventario.Size = new System.Drawing.Size(575, 332);
+            this.gBoxInventario.Size = new System.Drawing.Size(530, 315);
             this.gBoxInventario.TabIndex = 1;
             this.gBoxInventario.TabStop = false;
             this.gBoxInventario.Text = "Inventario";
@@ -127,7 +129,7 @@
             // txtCategoria
             // 
             this.txtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txtCategoria.Location = new System.Drawing.Point(143, 80);
+            this.txtCategoria.Location = new System.Drawing.Point(153, 81);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(110, 24);
             this.txtCategoria.TabIndex = 5;
@@ -137,7 +139,7 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblCategoria.Location = new System.Drawing.Point(53, 81);
+            this.lblCategoria.Location = new System.Drawing.Point(51, 81);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(76, 18);
             this.lblCategoria.TabIndex = 4;
@@ -154,23 +156,6 @@
             this.lblIngreso.TabIndex = 6;
             this.lblIngreso.Text = "Ingreso:";
             this.lblIngreso.Click += new System.EventHandler(this.lblIngreso_Click);
-            // 
-            // txtIngreso
-            // 
-            this.txtIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txtIngreso.Location = new System.Drawing.Point(143, 145);
-            this.txtIngreso.Name = "txtIngreso";
-            this.txtIngreso.Size = new System.Drawing.Size(29, 24);
-            this.txtIngreso.TabIndex = 7;
-            this.txtIngreso.TextChanged += new System.EventHandler(this.txtIngreso_TextChanged);
-            // 
-            // txtEgreso
-            // 
-            this.txtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txtEgreso.Location = new System.Drawing.Point(143, 181);
-            this.txtEgreso.Name = "txtEgreso";
-            this.txtEgreso.Size = new System.Drawing.Size(29, 24);
-            this.txtEgreso.TabIndex = 9;
             // 
             // lblEgreso
             // 
@@ -216,18 +201,10 @@
             this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "Precio:";
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txtPrecio.Location = new System.Drawing.Point(143, 247);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(71, 24);
-            this.txtPrecio.TabIndex = 14;
-            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnConfirmar.Location = new System.Drawing.Point(337, 262);
+            this.btnConfirmar.Location = new System.Drawing.Point(257, 241);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(91, 31);
             this.btnConfirmar.TabIndex = 16;
@@ -237,12 +214,52 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(449, 262);
+            this.btnCancelar.Location = new System.Drawing.Point(369, 241);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 31);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // maskedTxtIngreso
+            // 
+            this.maskedTxtIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.maskedTxtIngreso.Location = new System.Drawing.Point(143, 148);
+            this.maskedTxtIngreso.Mask = "99999";
+            this.maskedTxtIngreso.Name = "maskedTxtIngreso";
+            this.maskedTxtIngreso.Size = new System.Drawing.Size(32, 24);
+            this.maskedTxtIngreso.TabIndex = 18;
+            this.maskedTxtIngreso.ValidatingType = typeof(int);
+            // 
+            // maskedTxtEgreso
+            // 
+            this.maskedTxtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.maskedTxtEgreso.Location = new System.Drawing.Point(143, 180);
+            this.maskedTxtEgreso.Mask = "99999";
+            this.maskedTxtEgreso.Name = "maskedTxtEgreso";
+            this.maskedTxtEgreso.Size = new System.Drawing.Size(32, 24);
+            this.maskedTxtEgreso.TabIndex = 19;
+            this.maskedTxtEgreso.ValidatingType = typeof(int);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(143, 244);
+            this.maskedTextBox1.Mask = "99999999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(68, 24);
+            this.maskedTextBox1.TabIndex = 20;
+            this.maskedTextBox1.ValidatingType = typeof(int);
+            // 
+            // lblSimboloPrecio
+            // 
+            this.lblSimboloPrecio.AutoSize = true;
+            this.lblSimboloPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblSimboloPrecio.Location = new System.Drawing.Point(127, 247);
+            this.lblSimboloPrecio.Name = "lblSimboloPrecio";
+            this.lblSimboloPrecio.Size = new System.Drawing.Size(16, 18);
+            this.lblSimboloPrecio.TabIndex = 21;
+            this.lblSimboloPrecio.Text = "$";
             // 
             // frmProyecto
             // 
@@ -266,9 +283,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gBoxInventario;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.TextBox txtEgreso;
         private System.Windows.Forms.Label lblEgreso;
-        private System.Windows.Forms.TextBox txtIngreso;
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label lblCategoria;
@@ -280,7 +295,10 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label lblSimboloPrecio;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTxtEgreso;
+        private System.Windows.Forms.MaskedTextBox maskedTxtIngreso;
     }
 }
 
