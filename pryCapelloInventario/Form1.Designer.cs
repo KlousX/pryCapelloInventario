@@ -42,12 +42,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.maskedTxtIngreso = new System.Windows.Forms.MaskedTextBox();
             this.maskedTxtEgreso = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTxtPrecio = new System.Windows.Forms.MaskedTextBox();
             this.lblSimboloPrecio = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listLista = new System.Windows.Forms.ListBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,11 +65,11 @@
             // 
             // gBoxInventario
             // 
-            this.gBoxInventario.Controls.Add(this.listBox1);
+            this.gBoxInventario.Controls.Add(this.listLista);
             this.gBoxInventario.Controls.Add(this.txtNombre);
             this.gBoxInventario.Controls.Add(this.lblNombre);
             this.gBoxInventario.Controls.Add(this.lblSimboloPrecio);
-            this.gBoxInventario.Controls.Add(this.maskedTextBox1);
+            this.gBoxInventario.Controls.Add(this.maskedTxtPrecio);
             this.gBoxInventario.Controls.Add(this.maskedTxtEgreso);
             this.gBoxInventario.Controls.Add(this.maskedTxtIngreso);
             this.gBoxInventario.Controls.Add(this.btnCancelar);
@@ -93,12 +93,13 @@
             // 
             // txtDecrip
             // 
+            this.txtDecrip.Enabled = false;
             this.txtDecrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtDecrip.Location = new System.Drawing.Point(303, 49);
             this.txtDecrip.Multiline = true;
             this.txtDecrip.Name = "txtDecrip";
             this.txtDecrip.Size = new System.Drawing.Size(183, 80);
-            this.txtDecrip.TabIndex = 1;
+            this.txtDecrip.TabIndex = 2;
             this.txtDecrip.TextChanged += new System.EventHandler(this.txtDecrip_TextChanged);
             // 
             // lblCódigo
@@ -170,11 +171,12 @@
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.Enabled = false;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnRegistrar.Location = new System.Drawing.Point(322, 264);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(91, 31);
-            this.btnRegistrar.TabIndex = 16;
+            this.btnRegistrar.TabIndex = 7;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
@@ -184,39 +186,42 @@
             this.btnCancelar.Location = new System.Drawing.Point(419, 264);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 31);
-            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // maskedTxtIngreso
             // 
+            this.maskedTxtIngreso.Enabled = false;
             this.maskedTxtIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtIngreso.Location = new System.Drawing.Point(132, 158);
             this.maskedTxtIngreso.Mask = "99999";
             this.maskedTxtIngreso.Name = "maskedTxtIngreso";
             this.maskedTxtIngreso.Size = new System.Drawing.Size(32, 24);
-            this.maskedTxtIngreso.TabIndex = 18;
+            this.maskedTxtIngreso.TabIndex = 4;
             this.maskedTxtIngreso.ValidatingType = typeof(int);
             // 
             // maskedTxtEgreso
             // 
+            this.maskedTxtEgreso.Enabled = false;
             this.maskedTxtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtEgreso.Location = new System.Drawing.Point(131, 193);
             this.maskedTxtEgreso.Mask = "99999";
             this.maskedTxtEgreso.Name = "maskedTxtEgreso";
             this.maskedTxtEgreso.Size = new System.Drawing.Size(32, 24);
-            this.maskedTxtEgreso.TabIndex = 19;
+            this.maskedTxtEgreso.TabIndex = 5;
             this.maskedTxtEgreso.ValidatingType = typeof(int);
             // 
-            // maskedTextBox1
+            // maskedTxtPrecio
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(131, 227);
-            this.maskedTextBox1.Mask = "99999999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(68, 24);
-            this.maskedTextBox1.TabIndex = 20;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.maskedTxtPrecio.Enabled = false;
+            this.maskedTxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.maskedTxtPrecio.Location = new System.Drawing.Point(131, 227);
+            this.maskedTxtPrecio.Mask = "99999999";
+            this.maskedTxtPrecio.Name = "maskedTxtPrecio";
+            this.maskedTxtPrecio.Size = new System.Drawing.Size(68, 24);
+            this.maskedTxtPrecio.TabIndex = 6;
+            this.maskedTxtPrecio.ValidatingType = typeof(int);
             // 
             // lblSimboloPrecio
             // 
@@ -262,20 +267,21 @@
             this.lblCategoria.TabIndex = 4;
             this.lblCategoria.Text = "Categoría:";
             // 
-            // listBox1
+            // listLista
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listLista.Enabled = false;
+            this.listLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.listLista.FormattingEnabled = true;
+            this.listLista.ItemHeight = 18;
+            this.listLista.Items.AddRange(new object[] {
             "Bujia",
             "Juntas",
             "Silenciadores",
             "Transmisión"});
-            this.listBox1.Location = new System.Drawing.Point(135, 122);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 22);
-            this.listBox1.TabIndex = 24;
+            this.listLista.Location = new System.Drawing.Point(135, 122);
+            this.listLista.Name = "listLista";
+            this.listLista.Size = new System.Drawing.Size(120, 22);
+            this.listLista.TabIndex = 3;
             // 
             // txtCode
             // 
@@ -283,15 +289,18 @@
             this.txtCode.Location = new System.Drawing.Point(134, 28);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(147, 24);
-            this.txtCode.TabIndex = 3;
+            this.txtCode.TabIndex = 0;
+            this.txtCode.TextChanged += new System.EventHandler(this.txtCode_TextChanged);
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtNombre.Location = new System.Drawing.Point(135, 75);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(146, 24);
-            this.txtNombre.TabIndex = 23;
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // frmProyecto
             // 
@@ -324,13 +333,13 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblSimboloPrecio;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTxtPrecio;
         private System.Windows.Forms.MaskedTextBox maskedTxtEgreso;
         private System.Windows.Forms.MaskedTextBox maskedTxtIngreso;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listLista;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCode;
     }
