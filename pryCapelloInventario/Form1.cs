@@ -37,5 +37,15 @@ namespace pryCapelloInventario
         {
 
         }
+
+        private void txtCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDecrip_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
