@@ -21,7 +21,7 @@ namespace pryCapelloInventario
         int varIngreso = 0;
         int varEgreso = 0;
         int varPrecio = 0;
-
+        int varStockActual = 0;
 
         public frmProyecto()
         {
@@ -46,7 +46,8 @@ namespace pryCapelloInventario
 
         private void lblStockActual_Click(object sender, EventArgs e)
         {
-           
+           varStockActual = varIngreso - varEgreso;
+           lblStockActual.Text = varStockActual.ToString();
         }
 
         private void txtCategoria_TextChanged(object sender, EventArgs e)
@@ -116,21 +117,24 @@ namespace pryCapelloInventario
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            lblIndexCodigo.Text = txtCode.Text;
-            lblIndexNombre.Text = txtNombre.Text;
-            lblIndexDescrip.Text = txtDecrip.Text;
-            lblIndexCategoria.Text = listLista.Text;
-            lblIndexIngreso.Text = maskedTxtIngreso.Text;
-            lblIndexPrecio.Text = maskedTxtIngreso.Text;
+        { 
 
             varCodigo = txtCode.Text;
             varNombre = txtNombre.Text;
             varDescrip = txtDecrip.Text;
             varCategoria = listLista.Text;
-            varIngreso = Convert.ToInt16(maskedTxtIngreso.Text);
-            varEgreso = Convert.ToInt16(maskedTxtEgreso.Text);
-            varPrecio = Convert.ToInt16(maskedTxtPrecio.Text);
+            varIngreso = int.Parse(maskedTxtIngreso.Text);
+            varEgreso = int.Parse(maskedTxtEgreso.Text);
+            varPrecio = int.Parse(maskedTxtPrecio.Text);
+
+            lblIndexCodigo.Text = varCodigo;
+            lblIndexNombre.Text = varNombre;
+            lblIndexDescrip.Text = varDescrip;
+            lblIndexCategoria.Text = varCategoria;
+            lblIndexIngreso.Text = varIngreso.ToString();
+            lblIndexPrecio.Text = varPrecio.ToString();
+
+            MessageBox.Show("Producto registrado con exito");
         }
 
         

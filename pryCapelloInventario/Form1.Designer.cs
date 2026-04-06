@@ -155,7 +155,6 @@
             // 
             // maskedTxtPrecio
             // 
-            this.maskedTxtPrecio.Enabled = false;
             this.maskedTxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtPrecio.Location = new System.Drawing.Point(131, 227);
             this.maskedTxtPrecio.Mask = "99999999";
@@ -167,7 +166,6 @@
             // 
             // maskedTxtEgreso
             // 
-            this.maskedTxtEgreso.Enabled = false;
             this.maskedTxtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtEgreso.Location = new System.Drawing.Point(131, 193);
             this.maskedTxtEgreso.Mask = "99999";
@@ -202,7 +200,6 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Enabled = false;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnRegistrar.Location = new System.Drawing.Point(322, 264);
             this.btnRegistrar.Name = "btnRegistrar";
