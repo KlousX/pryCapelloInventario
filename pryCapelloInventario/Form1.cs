@@ -12,6 +12,17 @@ namespace pryCapelloInventario
 {
     public partial class frmProyecto : Form
     {
+
+        //DECLARACION DE VARIABLES GLOBALES
+        string varCodigo = "";
+        string varNombre = "";
+        string varDescrip = "";
+        string varCategoria = "";
+        int varIngreso = 0;
+        int varEgreso = 0;
+        int varPrecio = 0;
+
+
         public frmProyecto()
         {
             InitializeComponent();
@@ -29,7 +40,7 @@ namespace pryCapelloInventario
 
         private void txtIngreso_TextChanged(object sender, EventArgs e)
         {
-            maskedTxtEgreso.Enabled = true;
+            
         }
 
 
@@ -57,5 +68,71 @@ namespace pryCapelloInventario
         {
             txtNombre.Enabled = true;
         }
+
+        private void frmProyecto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            maskedTxtIngreso.Enabled = true;
+        }
+
+        private void maskedTxtEgreso_TextChanged(object sender, EventArgs e)
+        {
+            maskedTxtPrecio.Enabled = true;
+        }
+
+        private void maskedTxtIngreso_TextChanged(object sender, EventArgs e)
+        {
+            maskedTxtEgreso.Enabled = true;
+        }
+
+        private void maskedTxtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            btnRegistrar.Enabled = true;
+        }
+
+        private void maskedTxtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTxtIngreso_TextChanged_1(object sender, EventArgs e)
+        {
+            maskedTxtEgreso.Enabled = true;
+
+        }
+
+        private void maskedTxtPrecio_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            btnRegistrar.Enabled = true;
+        }
+
+        private void maskedTxtEgreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            maskedTxtPrecio.Enabled = true;
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            lblIndexCodigo.Text = txtCode.Text;
+            lblIndexNombre.Text = txtNombre.Text;
+            lblIndexDescrip.Text = txtDecrip.Text;
+            lblIndexCategoria.Text = listLista.Text;
+            lblIndexIngreso.Text = maskedTxtIngreso.Text;
+            lblIndexPrecio.Text = maskedTxtIngreso.Text;
+
+            varCodigo = txtCode.Text;
+            varNombre = txtNombre.Text;
+            varDescrip = txtDecrip.Text;
+            varCategoria = listLista.Text;
+            varIngreso = Convert.ToInt16(maskedTxtIngreso.Text);
+            varEgreso = Convert.ToInt16(maskedTxtEgreso.Text);
+            varPrecio = Convert.ToInt16(maskedTxtPrecio.Text);
+        }
+
+        
     }
 }
