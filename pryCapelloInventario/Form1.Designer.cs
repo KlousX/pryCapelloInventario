@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyecto));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gBoxInventario = new System.Windows.Forms.GroupBox();
-            this.listLista = new System.Windows.Forms.ListBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblSimboloPrecio = new System.Windows.Forms.Label();
@@ -48,13 +47,13 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.lblCódigo = new System.Windows.Forms.Label();
-            this.txtDecrip = new System.Windows.Forms.TextBox();
+            this.txtDecripcion = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblIndexPrecio = new System.Windows.Forms.Label();
             this.lblIndexIngreso = new System.Windows.Forms.Label();
             this.lblIndexCategoria = new System.Windows.Forms.Label();
-            this.lblIndexDescrip = new System.Windows.Forms.Label();
+            this.lblIndexDescripcion = new System.Windows.Forms.Label();
             this.lblPrecioLista = new System.Windows.Forms.Label();
             this.lblCategoriaLista = new System.Windows.Forms.Label();
             this.lblDescripLista = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.lblStockLista = new System.Windows.Forms.Label();
             this.lblIndexCodigo = new System.Windows.Forms.Label();
             this.lblIndexNombre = new System.Windows.Forms.Label();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBoxInventario.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             // gBoxInventario
             // 
-            this.gBoxInventario.Controls.Add(this.listLista);
+            this.gBoxInventario.Controls.Add(this.cboCategoria);
             this.gBoxInventario.Controls.Add(this.txtNombre);
             this.gBoxInventario.Controls.Add(this.lblNombre);
             this.gBoxInventario.Controls.Add(this.lblSimboloPrecio);
@@ -96,7 +96,7 @@
             this.gBoxInventario.Controls.Add(this.lblCategoria);
             this.gBoxInventario.Controls.Add(this.txtCode);
             this.gBoxInventario.Controls.Add(this.lblCódigo);
-            this.gBoxInventario.Controls.Add(this.txtDecrip);
+            this.gBoxInventario.Controls.Add(this.txtDecripcion);
             this.gBoxInventario.Controls.Add(this.lblProducto);
             this.gBoxInventario.Location = new System.Drawing.Point(25, 22);
             this.gBoxInventario.Name = "gBoxInventario";
@@ -105,26 +105,8 @@
             this.gBoxInventario.TabStop = false;
             this.gBoxInventario.Text = "Inventario";
             // 
-            // listLista
-            // 
-            this.listLista.Enabled = false;
-            this.listLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.listLista.FormattingEnabled = true;
-            this.listLista.ItemHeight = 18;
-            this.listLista.Items.AddRange(new object[] {
-            "Bujia",
-            "Juntas",
-            "Silenciadores",
-            "Transmisión"});
-            this.listLista.Location = new System.Drawing.Point(135, 122);
-            this.listLista.Name = "listLista";
-            this.listLista.Size = new System.Drawing.Size(120, 22);
-            this.listLista.TabIndex = 3;
-            this.listLista.SelectedIndexChanged += new System.EventHandler(this.listLista_SelectedIndexChanged);
-            // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtNombre.Location = new System.Drawing.Point(135, 75);
             this.txtNombre.Name = "txtNombre";
@@ -147,27 +129,27 @@
             // 
             this.lblSimboloPrecio.AutoSize = true;
             this.lblSimboloPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblSimboloPrecio.Location = new System.Drawing.Point(116, 230);
+            this.lblSimboloPrecio.Location = new System.Drawing.Point(122, 230);
             this.lblSimboloPrecio.Name = "lblSimboloPrecio";
             this.lblSimboloPrecio.Size = new System.Drawing.Size(16, 18);
-            this.lblSimboloPrecio.TabIndex = 21;
+            this.lblSimboloPrecio.TabIndex = 6;
             this.lblSimboloPrecio.Text = "$";
             // 
             // maskedTxtPrecio
             // 
             this.maskedTxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.maskedTxtPrecio.Location = new System.Drawing.Point(131, 227);
+            this.maskedTxtPrecio.Location = new System.Drawing.Point(135, 227);
             this.maskedTxtPrecio.Mask = "99999999";
             this.maskedTxtPrecio.Name = "maskedTxtPrecio";
             this.maskedTxtPrecio.Size = new System.Drawing.Size(68, 24);
-            this.maskedTxtPrecio.TabIndex = 6;
+            this.maskedTxtPrecio.TabIndex = 7;
             this.maskedTxtPrecio.ValidatingType = typeof(int);
             this.maskedTxtPrecio.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTxtPrecio_MaskInputRejected);
             // 
             // maskedTxtEgreso
             // 
             this.maskedTxtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.maskedTxtEgreso.Location = new System.Drawing.Point(131, 193);
+            this.maskedTxtEgreso.Location = new System.Drawing.Point(135, 193);
             this.maskedTxtEgreso.Mask = "99999";
             this.maskedTxtEgreso.Name = "maskedTxtEgreso";
             this.maskedTxtEgreso.Size = new System.Drawing.Size(32, 24);
@@ -177,9 +159,8 @@
             // 
             // maskedTxtIngreso
             // 
-            this.maskedTxtIngreso.Enabled = false;
             this.maskedTxtIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.maskedTxtIngreso.Location = new System.Drawing.Point(132, 158);
+            this.maskedTxtIngreso.Location = new System.Drawing.Point(136, 158);
             this.maskedTxtIngreso.Mask = "99999";
             this.maskedTxtIngreso.Name = "maskedTxtIngreso";
             this.maskedTxtIngreso.Size = new System.Drawing.Size(32, 24);
@@ -194,7 +175,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(419, 264);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 31);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -204,7 +185,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(322, 264);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(91, 31);
-            this.btnRegistrar.TabIndex = 7;
+            this.btnRegistrar.TabIndex = 8;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -296,16 +277,15 @@
             this.lblCódigo.TabIndex = 2;
             this.lblCódigo.Text = "Código:";
             // 
-            // txtDecrip
+            // txtDecripcion
             // 
-            this.txtDecrip.Enabled = false;
-            this.txtDecrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.txtDecrip.Location = new System.Drawing.Point(303, 49);
-            this.txtDecrip.Multiline = true;
-            this.txtDecrip.Name = "txtDecrip";
-            this.txtDecrip.Size = new System.Drawing.Size(183, 80);
-            this.txtDecrip.TabIndex = 2;
-            this.txtDecrip.TextChanged += new System.EventHandler(this.txtDecrip_TextChanged);
+            this.txtDecripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtDecripcion.Location = new System.Drawing.Point(303, 49);
+            this.txtDecripcion.Multiline = true;
+            this.txtDecripcion.Name = "txtDecripcion";
+            this.txtDecripcion.Size = new System.Drawing.Size(183, 80);
+            this.txtDecripcion.TabIndex = 2;
+            this.txtDecripcion.TextChanged += new System.EventHandler(this.txtDecrip_TextChanged);
             // 
             // lblProducto
             // 
@@ -327,11 +307,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel1.Controls.Add(this.lblIndexPrecio, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexIngreso, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexCategoria, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblIndexDescrip, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblIndexDescripcion, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblPrecioLista, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCategoriaLista, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDescripLista, 2, 0);
@@ -352,7 +332,7 @@
             // 
             this.lblIndexPrecio.AutoSize = true;
             this.lblIndexPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexPrecio.Location = new System.Drawing.Point(467, 14);
+            this.lblIndexPrecio.Location = new System.Drawing.Point(465, 14);
             this.lblIndexPrecio.Name = "lblIndexPrecio";
             this.lblIndexPrecio.Size = new System.Drawing.Size(19, 13);
             this.lblIndexPrecio.TabIndex = 29;
@@ -362,7 +342,7 @@
             // 
             this.lblIndexIngreso.AutoSize = true;
             this.lblIndexIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexIngreso.Location = new System.Drawing.Point(404, 14);
+            this.lblIndexIngreso.Location = new System.Drawing.Point(402, 14);
             this.lblIndexIngreso.Name = "lblIndexIngreso";
             this.lblIndexIngreso.Size = new System.Drawing.Size(42, 13);
             this.lblIndexIngreso.TabIndex = 28;
@@ -373,28 +353,28 @@
             // 
             this.lblIndexCategoria.AutoSize = true;
             this.lblIndexCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexCategoria.Location = new System.Drawing.Point(285, 14);
+            this.lblIndexCategoria.Location = new System.Drawing.Point(283, 14);
             this.lblIndexCategoria.Name = "lblIndexCategoria";
             this.lblIndexCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblIndexCategoria.TabIndex = 27;
             this.lblIndexCategoria.Text = "Categoria";
             // 
-            // lblIndexDescrip
+            // lblIndexDescripcion
             // 
-            this.lblIndexDescrip.AutoSize = true;
-            this.lblIndexDescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexDescrip.Location = new System.Drawing.Point(146, 14);
-            this.lblIndexDescrip.Name = "lblIndexDescrip";
-            this.lblIndexDescrip.Size = new System.Drawing.Size(63, 13);
-            this.lblIndexDescrip.TabIndex = 26;
-            this.lblIndexDescrip.Text = "Descripcion";
+            this.lblIndexDescripcion.AutoSize = true;
+            this.lblIndexDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblIndexDescripcion.Location = new System.Drawing.Point(144, 14);
+            this.lblIndexDescripcion.Name = "lblIndexDescripcion";
+            this.lblIndexDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblIndexDescripcion.TabIndex = 26;
+            this.lblIndexDescripcion.Text = "Descripcion";
             // 
             // lblPrecioLista
             // 
             this.lblPrecioLista.AutoSize = true;
             this.lblPrecioLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblPrecioLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblPrecioLista.Location = new System.Drawing.Point(467, 0);
+            this.lblPrecioLista.Location = new System.Drawing.Point(465, 0);
             this.lblPrecioLista.Name = "lblPrecioLista";
             this.lblPrecioLista.Size = new System.Drawing.Size(37, 13);
             this.lblPrecioLista.TabIndex = 23;
@@ -406,7 +386,7 @@
             this.lblCategoriaLista.AutoSize = true;
             this.lblCategoriaLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblCategoriaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblCategoriaLista.Location = new System.Drawing.Point(285, 0);
+            this.lblCategoriaLista.Location = new System.Drawing.Point(283, 0);
             this.lblCategoriaLista.Name = "lblCategoriaLista";
             this.lblCategoriaLista.Size = new System.Drawing.Size(54, 13);
             this.lblCategoriaLista.TabIndex = 23;
@@ -418,7 +398,7 @@
             this.lblDescripLista.AutoSize = true;
             this.lblDescripLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblDescripLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblDescripLista.Location = new System.Drawing.Point(146, 0);
+            this.lblDescripLista.Location = new System.Drawing.Point(144, 0);
             this.lblDescripLista.Name = "lblDescripLista";
             this.lblDescripLista.Size = new System.Drawing.Size(63, 13);
             this.lblDescripLista.TabIndex = 23;
@@ -430,7 +410,7 @@
             this.lblNombreLista.AutoSize = true;
             this.lblNombreLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblNombreLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblNombreLista.Location = new System.Drawing.Point(54, 0);
+            this.lblNombreLista.Location = new System.Drawing.Point(53, 0);
             this.lblNombreLista.Name = "lblNombreLista";
             this.lblNombreLista.Size = new System.Drawing.Size(44, 13);
             this.lblNombreLista.TabIndex = 23;
@@ -454,7 +434,7 @@
             this.lblStockLista.AutoSize = true;
             this.lblStockLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblStockLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblStockLista.Location = new System.Drawing.Point(404, 0);
+            this.lblStockLista.Location = new System.Drawing.Point(402, 0);
             this.lblStockLista.Name = "lblStockLista";
             this.lblStockLista.Size = new System.Drawing.Size(35, 13);
             this.lblStockLista.TabIndex = 23;
@@ -475,11 +455,25 @@
             // 
             this.lblIndexNombre.AutoSize = true;
             this.lblIndexNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexNombre.Location = new System.Drawing.Point(54, 14);
+            this.lblIndexNombre.Location = new System.Drawing.Point(53, 14);
             this.lblIndexNombre.Name = "lblIndexNombre";
             this.lblIndexNombre.Size = new System.Drawing.Size(29, 13);
             this.lblIndexNombre.TabIndex = 25;
             this.lblIndexNombre.Text = "Nom";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Items.AddRange(new object[] {
+            "Bujía",
+            "Transmisión",
+            "Silenciador",
+            "Juntas",
+            "Cubiertas"});
+            this.cboCategoria.Location = new System.Drawing.Point(135, 123);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cboCategoria.TabIndex = 3;
             // 
             // frmProyecto
             // 
@@ -510,7 +504,7 @@
         private System.Windows.Forms.Label lblEgreso;
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label lblCódigo;
-        private System.Windows.Forms.TextBox txtDecrip;
+        private System.Windows.Forms.TextBox txtDecripcion;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblStockActual;
         private System.Windows.Forms.Label lblStock;
@@ -523,7 +517,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.ListBox listLista;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -536,9 +529,10 @@
         private System.Windows.Forms.Label lblIndexPrecio;
         private System.Windows.Forms.Label lblIndexIngreso;
         private System.Windows.Forms.Label lblIndexCategoria;
-        private System.Windows.Forms.Label lblIndexDescrip;
+        private System.Windows.Forms.Label lblIndexDescripcion;
         private System.Windows.Forms.Label lblIndexCodigo;
         private System.Windows.Forms.Label lblIndexNombre;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }
 

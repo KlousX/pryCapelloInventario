@@ -12,11 +12,12 @@ namespace pryCapelloInventario
 {
     public partial class frmProyecto : Form
     {
+        
 
         //DECLARACION DE VARIABLES GLOBALES
         string varCodigo = "";
         string varNombre = "";
-        string varDescrip = "";
+        string varDescripcion = "";
         string varCategoria = "";
         int varIngreso = 0;
         int varEgreso = 0;
@@ -52,22 +53,22 @@ namespace pryCapelloInventario
 
         private void txtCategoria_TextChanged(object sender, EventArgs e)
         {
-            maskedTxtIngreso.Enabled = true;
+        
         }
 
         private void txtDecrip_TextChanged(object sender, EventArgs e)
         {
-            listLista.Enabled = true;
+        
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            txtDecrip.Enabled = true;
+        
         }
 
         private void txtCode_TextChanged(object sender, EventArgs e)
         {
-            txtNombre.Enabled = true;
+        
         }
 
         private void frmProyecto_Load(object sender, EventArgs e)
@@ -77,22 +78,22 @@ namespace pryCapelloInventario
 
         private void listLista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            maskedTxtIngreso.Enabled = true;
+        
         }
 
         private void maskedTxtEgreso_TextChanged(object sender, EventArgs e)
         {
-            maskedTxtPrecio.Enabled = true;
+        
         }
 
         private void maskedTxtIngreso_TextChanged(object sender, EventArgs e)
         {
-            maskedTxtEgreso.Enabled = true;
+        
         }
 
         private void maskedTxtPrecio_TextChanged(object sender, EventArgs e)
         {
-            btnRegistrar.Enabled = true;
+        
         }
 
         private void maskedTxtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -102,41 +103,91 @@ namespace pryCapelloInventario
 
         private void maskedTxtIngreso_TextChanged_1(object sender, EventArgs e)
         {
-            maskedTxtEgreso.Enabled = true;
 
         }
 
         private void maskedTxtPrecio_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            btnRegistrar.Enabled = true;
+        
         }
 
         private void maskedTxtEgreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            maskedTxtPrecio.Enabled = true;
+         
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
-            varCodigo = txtCode.Text;
-            varNombre = txtNombre.Text;
-            varDescrip = txtDecrip.Text;
-            varCategoria = listLista.Text;
-            varIngreso = int.Parse(maskedTxtIngreso.Text);
-            varEgreso = int.Parse(maskedTxtEgreso.Text);
-            varPrecio = int.Parse(maskedTxtPrecio.Text);
+     
+            if (txtCode.Text == "")
+                {
+                MessageBox.Show("Ingrese el código");
+                txtCode.Focus();
+                } 
+                else {
+                      if (txtNombre.Text == "")
+                        {
+                         MessageBox.Show("Ingrese el nombre");
+                         txtNombre.Focus();
+                        }
+                        else {
+                            if (txtDecripcion.Text == "")
+                               {
+                                MessageBox.Show("Ingrese la descripción");
+                                txtDecripcion.Focus();
+                               }
+                            else { 
+                                if (maskedTxtIngreso.Text == "")
+                                    {
+                                    MessageBox.Show("Ingrese la cantidad de ingreso de stock");
+                                    maskedTxtIngreso.Focus();
+                                    }
+                                    else {
+                                        if (maskedTxtEgreso.Text == "")
+                                            {
+                                             MessageBox.Show("Ingrese la cantidad de egreso de stock");
+                                             maskedTxtEgreso.Focus();
+                                            }
+                                            else {
+                                            if (maskedTxtPrecio.Text == "")
+                                            {
+                                                MessageBox.Show("Ingrese el precio");
+                                                maskedTxtPrecio.Focus();
+                                            }
+                                            else {
 
-            varStockActual = varIngreso - varEgreso;
+                                                    varCodigo = txtCode.Text;
+                                                    varNombre = txtNombre.Text;
+                                                    varDescripcion = txtDecripcion.Text;
+                                                    varCategoria = cboCategoria.Text;
+                                                    varIngreso = int.Parse(maskedTxtIngreso.Text);
+                                                    varEgreso = int.Parse(maskedTxtEgreso.Text);
+                                                    varPrecio = int.Parse(maskedTxtPrecio.Text);
 
-            lblIndexCodigo.Text = varCodigo;
-            lblIndexNombre.Text = varNombre;
-            lblIndexDescrip.Text = varDescrip;
-            lblIndexCategoria.Text = varCategoria;
-            lblIndexIngreso.Text = varStockActual.ToString();
-            lblIndexPrecio.Text = varPrecio.ToString();
+                                                    varStockActual = varIngreso - varEgreso;
 
-            MessageBox.Show("Producto registrado con exito");
+                                                    lblIndexCodigo.Text = varCodigo;
+                                                    lblIndexNombre.Text = varNombre;
+                                                    lblIndexDescripcion.Text = varDescripcion;
+                                                    lblIndexCategoria.Text = varCategoria;
+                                                    lblIndexIngreso.Text = varStockActual.ToString();
+                                                    lblIndexPrecio.Text = varPrecio.ToString();
+                                                    txtCode.Text = "";
+                                                    txtDecripcion.Text = "";
+                                                    txtNombre.Text = "";
+                                                    cboCategoria.Text = "";
+                                                    maskedTxtIngreso.Text = "";
+                                                    maskedTxtEgreso.Text = "";
+                                                    maskedTxtPrecio.Text = "";
+
+                                                    MessageBox.Show("Producto registrado con exito");
+                                                 }
+                                             }
+                                        }                   
+                                }
+                            }
+                    }
         }
 
         private void lblIndexIngreso_Click(object sender, EventArgs e)
