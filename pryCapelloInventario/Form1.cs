@@ -117,7 +117,7 @@ namespace pryCapelloInventario
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
-        { 
+        {
 
             varCodigo = txtCode.Text;
             varNombre = txtNombre.Text;
@@ -127,16 +127,21 @@ namespace pryCapelloInventario
             varEgreso = int.Parse(maskedTxtEgreso.Text);
             varPrecio = int.Parse(maskedTxtPrecio.Text);
 
+            varStockActual = varIngreso - varEgreso;
+
             lblIndexCodigo.Text = varCodigo;
             lblIndexNombre.Text = varNombre;
             lblIndexDescrip.Text = varDescrip;
             lblIndexCategoria.Text = varCategoria;
-            lblIndexIngreso.Text = varIngreso.ToString();
+            lblIndexIngreso.Text = varStockActual.ToString();
             lblIndexPrecio.Text = varPrecio.ToString();
 
             MessageBox.Show("Producto registrado con exito");
         }
 
-        
+        private void lblIndexIngreso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

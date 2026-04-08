@@ -51,18 +51,18 @@
             this.txtDecrip = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCodeLista = new System.Windows.Forms.Label();
-            this.lblNombreLista = new System.Windows.Forms.Label();
-            this.lblDescripLista = new System.Windows.Forms.Label();
-            this.lblCategoriaLista = new System.Windows.Forms.Label();
-            this.lblIngresoLista = new System.Windows.Forms.Label();
+            this.lblIndexPrecio = new System.Windows.Forms.Label();
+            this.lblIndexIngreso = new System.Windows.Forms.Label();
+            this.lblIndexCategoria = new System.Windows.Forms.Label();
+            this.lblIndexDescrip = new System.Windows.Forms.Label();
             this.lblPrecioLista = new System.Windows.Forms.Label();
+            this.lblCategoriaLista = new System.Windows.Forms.Label();
+            this.lblDescripLista = new System.Windows.Forms.Label();
+            this.lblNombreLista = new System.Windows.Forms.Label();
+            this.lblCodeLista = new System.Windows.Forms.Label();
+            this.lblStockLista = new System.Windows.Forms.Label();
             this.lblIndexCodigo = new System.Windows.Forms.Label();
             this.lblIndexNombre = new System.Windows.Forms.Label();
-            this.lblIndexDescrip = new System.Windows.Forms.Label();
-            this.lblIndexCategoria = new System.Windows.Forms.Label();
-            this.lblIndexIngreso = new System.Windows.Forms.Label();
-            this.lblIndexPrecio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBoxInventario.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -327,7 +327,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel1.Controls.Add(this.lblIndexPrecio, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexIngreso, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexCategoria, 3, 1);
@@ -337,7 +337,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblDescripLista, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblNombreLista, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCodeLista, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblIngresoLista, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblStockLista, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexCodigo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexNombre, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 343);
@@ -347,6 +347,95 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 98);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // lblIndexPrecio
+            // 
+            this.lblIndexPrecio.AutoSize = true;
+            this.lblIndexPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblIndexPrecio.Location = new System.Drawing.Point(467, 14);
+            this.lblIndexPrecio.Name = "lblIndexPrecio";
+            this.lblIndexPrecio.Size = new System.Drawing.Size(19, 13);
+            this.lblIndexPrecio.TabIndex = 29;
+            this.lblIndexPrecio.Text = "$$";
+            // 
+            // lblIndexIngreso
+            // 
+            this.lblIndexIngreso.AutoSize = true;
+            this.lblIndexIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblIndexIngreso.Location = new System.Drawing.Point(404, 14);
+            this.lblIndexIngreso.Name = "lblIndexIngreso";
+            this.lblIndexIngreso.Size = new System.Drawing.Size(42, 13);
+            this.lblIndexIngreso.TabIndex = 28;
+            this.lblIndexIngreso.Text = "Ingreso";
+            this.lblIndexIngreso.Click += new System.EventHandler(this.lblIndexIngreso_Click);
+            // 
+            // lblIndexCategoria
+            // 
+            this.lblIndexCategoria.AutoSize = true;
+            this.lblIndexCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblIndexCategoria.Location = new System.Drawing.Point(285, 14);
+            this.lblIndexCategoria.Name = "lblIndexCategoria";
+            this.lblIndexCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblIndexCategoria.TabIndex = 27;
+            this.lblIndexCategoria.Text = "Categoria";
+            // 
+            // lblIndexDescrip
+            // 
+            this.lblIndexDescrip.AutoSize = true;
+            this.lblIndexDescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblIndexDescrip.Location = new System.Drawing.Point(146, 14);
+            this.lblIndexDescrip.Name = "lblIndexDescrip";
+            this.lblIndexDescrip.Size = new System.Drawing.Size(63, 13);
+            this.lblIndexDescrip.TabIndex = 26;
+            this.lblIndexDescrip.Text = "Descripcion";
+            // 
+            // lblPrecioLista
+            // 
+            this.lblPrecioLista.AutoSize = true;
+            this.lblPrecioLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblPrecioLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblPrecioLista.Location = new System.Drawing.Point(467, 0);
+            this.lblPrecioLista.Name = "lblPrecioLista";
+            this.lblPrecioLista.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecioLista.TabIndex = 23;
+            this.lblPrecioLista.Text = "Precio";
+            this.lblPrecioLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblCategoriaLista
+            // 
+            this.lblCategoriaLista.AutoSize = true;
+            this.lblCategoriaLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblCategoriaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblCategoriaLista.Location = new System.Drawing.Point(285, 0);
+            this.lblCategoriaLista.Name = "lblCategoriaLista";
+            this.lblCategoriaLista.Size = new System.Drawing.Size(54, 13);
+            this.lblCategoriaLista.TabIndex = 23;
+            this.lblCategoriaLista.Text = "Categoría";
+            this.lblCategoriaLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblDescripLista
+            // 
+            this.lblDescripLista.AutoSize = true;
+            this.lblDescripLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblDescripLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblDescripLista.Location = new System.Drawing.Point(146, 0);
+            this.lblDescripLista.Name = "lblDescripLista";
+            this.lblDescripLista.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripLista.TabIndex = 23;
+            this.lblDescripLista.Text = "Descripción";
+            this.lblDescripLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNombreLista
+            // 
+            this.lblNombreLista.AutoSize = true;
+            this.lblNombreLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblNombreLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblNombreLista.Location = new System.Drawing.Point(54, 0);
+            this.lblNombreLista.Name = "lblNombreLista";
+            this.lblNombreLista.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreLista.TabIndex = 23;
+            this.lblNombreLista.Text = "Nombre";
+            this.lblNombreLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblCodeLista
             // 
@@ -360,65 +449,17 @@
             this.lblCodeLista.Text = "Código";
             this.lblCodeLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNombreLista
+            // lblStockLista
             // 
-            this.lblNombreLista.AutoSize = true;
-            this.lblNombreLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblNombreLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblNombreLista.Location = new System.Drawing.Point(55, 0);
-            this.lblNombreLista.Name = "lblNombreLista";
-            this.lblNombreLista.Size = new System.Drawing.Size(44, 13);
-            this.lblNombreLista.TabIndex = 23;
-            this.lblNombreLista.Text = "Nombre";
-            this.lblNombreLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDescripLista
-            // 
-            this.lblDescripLista.AutoSize = true;
-            this.lblDescripLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblDescripLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblDescripLista.Location = new System.Drawing.Point(147, 0);
-            this.lblDescripLista.Name = "lblDescripLista";
-            this.lblDescripLista.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripLista.TabIndex = 23;
-            this.lblDescripLista.Text = "Descripción";
-            this.lblDescripLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblCategoriaLista
-            // 
-            this.lblCategoriaLista.AutoSize = true;
-            this.lblCategoriaLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblCategoriaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblCategoriaLista.Location = new System.Drawing.Point(286, 0);
-            this.lblCategoriaLista.Name = "lblCategoriaLista";
-            this.lblCategoriaLista.Size = new System.Drawing.Size(54, 13);
-            this.lblCategoriaLista.TabIndex = 23;
-            this.lblCategoriaLista.Text = "Categoría";
-            this.lblCategoriaLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblIngresoLista
-            // 
-            this.lblIngresoLista.AutoSize = true;
-            this.lblIngresoLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblIngresoLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIngresoLista.Location = new System.Drawing.Point(405, 0);
-            this.lblIngresoLista.Name = "lblIngresoLista";
-            this.lblIngresoLista.Size = new System.Drawing.Size(42, 13);
-            this.lblIngresoLista.TabIndex = 23;
-            this.lblIngresoLista.Text = "Ingreso";
-            this.lblIngresoLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblPrecioLista
-            // 
-            this.lblPrecioLista.AutoSize = true;
-            this.lblPrecioLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblPrecioLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblPrecioLista.Location = new System.Drawing.Point(468, 0);
-            this.lblPrecioLista.Name = "lblPrecioLista";
-            this.lblPrecioLista.Size = new System.Drawing.Size(37, 13);
-            this.lblPrecioLista.TabIndex = 23;
-            this.lblPrecioLista.Text = "Precio";
-            this.lblPrecioLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStockLista.AutoSize = true;
+            this.lblStockLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblStockLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblStockLista.Location = new System.Drawing.Point(404, 0);
+            this.lblStockLista.Name = "lblStockLista";
+            this.lblStockLista.Size = new System.Drawing.Size(35, 13);
+            this.lblStockLista.TabIndex = 23;
+            this.lblStockLista.Text = "Stock";
+            this.lblStockLista.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblIndexCodigo
             // 
@@ -434,51 +475,11 @@
             // 
             this.lblIndexNombre.AutoSize = true;
             this.lblIndexNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexNombre.Location = new System.Drawing.Point(55, 14);
+            this.lblIndexNombre.Location = new System.Drawing.Point(54, 14);
             this.lblIndexNombre.Name = "lblIndexNombre";
             this.lblIndexNombre.Size = new System.Drawing.Size(29, 13);
             this.lblIndexNombre.TabIndex = 25;
             this.lblIndexNombre.Text = "Nom";
-            // 
-            // lblIndexDescrip
-            // 
-            this.lblIndexDescrip.AutoSize = true;
-            this.lblIndexDescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexDescrip.Location = new System.Drawing.Point(147, 14);
-            this.lblIndexDescrip.Name = "lblIndexDescrip";
-            this.lblIndexDescrip.Size = new System.Drawing.Size(63, 13);
-            this.lblIndexDescrip.TabIndex = 26;
-            this.lblIndexDescrip.Text = "Descripcion";
-            // 
-            // lblIndexCategoria
-            // 
-            this.lblIndexCategoria.AutoSize = true;
-            this.lblIndexCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexCategoria.Location = new System.Drawing.Point(286, 14);
-            this.lblIndexCategoria.Name = "lblIndexCategoria";
-            this.lblIndexCategoria.Size = new System.Drawing.Size(52, 13);
-            this.lblIndexCategoria.TabIndex = 27;
-            this.lblIndexCategoria.Text = "Categoria";
-            // 
-            // lblIndexIngreso
-            // 
-            this.lblIndexIngreso.AutoSize = true;
-            this.lblIndexIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexIngreso.Location = new System.Drawing.Point(405, 14);
-            this.lblIndexIngreso.Name = "lblIndexIngreso";
-            this.lblIndexIngreso.Size = new System.Drawing.Size(42, 13);
-            this.lblIndexIngreso.TabIndex = 28;
-            this.lblIndexIngreso.Text = "Ingreso";
-            // 
-            // lblIndexPrecio
-            // 
-            this.lblIndexPrecio.AutoSize = true;
-            this.lblIndexPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexPrecio.Location = new System.Drawing.Point(468, 14);
-            this.lblIndexPrecio.Name = "lblIndexPrecio";
-            this.lblIndexPrecio.Size = new System.Drawing.Size(19, 13);
-            this.lblIndexPrecio.TabIndex = 29;
-            this.lblIndexPrecio.Text = "$$";
             // 
             // frmProyecto
             // 
@@ -531,7 +532,7 @@
         private System.Windows.Forms.Label lblCategoriaLista;
         private System.Windows.Forms.Label lblDescripLista;
         private System.Windows.Forms.Label lblNombreLista;
-        private System.Windows.Forms.Label lblIngresoLista;
+        private System.Windows.Forms.Label lblStockLista;
         private System.Windows.Forms.Label lblIndexPrecio;
         private System.Windows.Forms.Label lblIndexIngreso;
         private System.Windows.Forms.Label lblIndexCategoria;
