@@ -12,7 +12,8 @@ namespace pryCapelloInventario
 {
     public partial class frmProyecto : Form
     {
-        
+
+        private List<Producto> productos = new List<Producto>();
 
         //DECLARACION DE VARIABLES GLOBALES
         string varCodigo = "";
@@ -118,8 +119,9 @@ namespace pryCapelloInventario
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            Producto p = new Producto();
 
-     
+
             if (txtCode.Text == "")
                 {
                 MessageBox.Show("Ingrese el código");
@@ -157,15 +159,18 @@ namespace pryCapelloInventario
                                             }
                                             else {
 
-                                                    varCodigo = txtCode.Text;
-                                                    varNombre = txtNombre.Text;
-                                                    varDescripcion = txtDecripcion.Text;
-                                                    varCategoria = cboCategoria.Text;
-                                                    varIngreso = int.Parse(maskedTxtIngreso.Text);
-                                                    varEgreso = int.Parse(maskedTxtEgreso.Text);
-                                                    varPrecio = int.Parse(maskedTxtPrecio.Text);
+                                                    p.Codigo = txtCode.Text;
+                                                    p.Nombre = txtNombre.Text;
+                                                    p.Descripcion = txtDecripcion.Text;
+                                                    p.Categoria = cboCategoria.Text;
 
-                                                    varStockActual = varIngreso - varEgreso;
+                                                    int ingreso = int.Parse(maskedTxtIngreso.Text);
+                                                    int egreso = int.Parse(maskedTxtEgreso.Text);
+                                                    
+                                                    p.Precio = int.Parse(maskedTxtPrecio.Text);
+                                                    p.Stock = ingreso - egreso;
+                                                    
+                                                    productos.Add(p);
 
                                                     lblIndexCodigo.Text = varCodigo;
                                                     lblIndexNombre.Text = varNombre;
@@ -198,6 +203,11 @@ namespace pryCapelloInventario
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gBoxInventario_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
