@@ -63,16 +63,18 @@
             this.lblStockLista = new System.Windows.Forms.Label();
             this.lblIndexCodigo = new System.Windows.Forms.Label();
             this.lblIndexNombre = new System.Windows.Forms.Label();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBoxInventario.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(791, 556);
             this.pictureBox1.TabIndex = 0;
@@ -80,6 +82,7 @@
             // 
             // gBoxInventario
             // 
+            this.gBoxInventario.Controls.Add(this.dgvProductos);
             this.gBoxInventario.Controls.Add(this.cboCategoria);
             this.gBoxInventario.Controls.Add(this.txtNombre);
             this.gBoxInventario.Controls.Add(this.lblNombre);
@@ -100,9 +103,9 @@
             this.gBoxInventario.Controls.Add(this.txtDecripcion);
             this.gBoxInventario.Controls.Add(this.lblProducto);
             this.gBoxInventario.Location = new System.Drawing.Point(33, 27);
-            this.gBoxInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gBoxInventario.Margin = new System.Windows.Forms.Padding(4);
             this.gBoxInventario.Name = "gBoxInventario";
-            this.gBoxInventario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gBoxInventario.Padding = new System.Windows.Forms.Padding(4);
             this.gBoxInventario.Size = new System.Drawing.Size(707, 388);
             this.gBoxInventario.TabIndex = 1;
             this.gBoxInventario.TabStop = false;
@@ -119,7 +122,7 @@
             "Juntas",
             "Cubiertas"});
             this.cboCategoria.Location = new System.Drawing.Point(180, 151);
-            this.cboCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(160, 24);
             this.cboCategoria.TabIndex = 3;
@@ -128,7 +131,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtNombre.Location = new System.Drawing.Point(180, 92);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(193, 29);
             this.txtNombre.TabIndex = 1;
@@ -161,7 +164,7 @@
             // 
             this.maskedTxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtPrecio.Location = new System.Drawing.Point(180, 279);
-            this.maskedTxtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTxtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTxtPrecio.Mask = "99999999";
             this.maskedTxtPrecio.Name = "maskedTxtPrecio";
             this.maskedTxtPrecio.Size = new System.Drawing.Size(89, 29);
@@ -173,7 +176,7 @@
             // 
             this.maskedTxtEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtEgreso.Location = new System.Drawing.Point(180, 238);
-            this.maskedTxtEgreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTxtEgreso.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTxtEgreso.Mask = "99999";
             this.maskedTxtEgreso.Name = "maskedTxtEgreso";
             this.maskedTxtEgreso.Size = new System.Drawing.Size(41, 29);
@@ -185,7 +188,7 @@
             // 
             this.maskedTxtIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.maskedTxtIngreso.Location = new System.Drawing.Point(181, 194);
-            this.maskedTxtIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTxtIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTxtIngreso.Mask = "99999";
             this.maskedTxtIngreso.Name = "maskedTxtIngreso";
             this.maskedTxtIngreso.Size = new System.Drawing.Size(41, 29);
@@ -198,7 +201,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnCancelar.Location = new System.Drawing.Point(559, 325);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(121, 38);
             this.btnCancelar.TabIndex = 9;
@@ -210,7 +213,7 @@
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnRegistrar.Location = new System.Drawing.Point(429, 325);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(121, 38);
             this.btnRegistrar.TabIndex = 8;
@@ -295,7 +298,7 @@
             // 
             this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtCode.Location = new System.Drawing.Point(179, 34);
-            this.txtCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(195, 29);
             this.txtCode.TabIndex = 0;
@@ -317,7 +320,7 @@
             // 
             this.txtDecripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtDecripcion.Location = new System.Drawing.Point(404, 60);
-            this.txtDecripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDecripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDecripcion.Multiline = true;
             this.txtDecripcion.Name = "txtDecripcion";
             this.txtDecripcion.Size = new System.Drawing.Size(243, 98);
@@ -345,7 +348,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tableLayoutPanel1.Controls.Add(this.lblIndexPrecio, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexIngreso, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexCategoria, 3, 1);
@@ -359,7 +362,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblIndexCodigo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblIndexNombre, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(33, 422);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -371,7 +374,7 @@
             // 
             this.lblIndexPrecio.AutoSize = true;
             this.lblIndexPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexPrecio.Location = new System.Drawing.Point(619, 18);
+            this.lblIndexPrecio.Location = new System.Drawing.Point(618, 18);
             this.lblIndexPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIndexPrecio.Name = "lblIndexPrecio";
             this.lblIndexPrecio.Size = new System.Drawing.Size(24, 17);
@@ -382,7 +385,7 @@
             // 
             this.lblIndexIngreso.AutoSize = true;
             this.lblIndexIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexIngreso.Location = new System.Drawing.Point(535, 18);
+            this.lblIndexIngreso.Location = new System.Drawing.Point(534, 18);
             this.lblIndexIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIndexIngreso.Name = "lblIndexIngreso";
             this.lblIndexIngreso.Size = new System.Drawing.Size(55, 17);
@@ -394,7 +397,7 @@
             // 
             this.lblIndexCategoria.AutoSize = true;
             this.lblIndexCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexCategoria.Location = new System.Drawing.Point(376, 18);
+            this.lblIndexCategoria.Location = new System.Drawing.Point(375, 18);
             this.lblIndexCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIndexCategoria.Name = "lblIndexCategoria";
             this.lblIndexCategoria.Size = new System.Drawing.Size(69, 17);
@@ -405,7 +408,7 @@
             // 
             this.lblIndexDescripcion.AutoSize = true;
             this.lblIndexDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblIndexDescripcion.Location = new System.Drawing.Point(191, 18);
+            this.lblIndexDescripcion.Location = new System.Drawing.Point(190, 18);
             this.lblIndexDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIndexDescripcion.Name = "lblIndexDescripcion";
             this.lblIndexDescripcion.Size = new System.Drawing.Size(82, 17);
@@ -417,7 +420,7 @@
             this.lblPrecioLista.AutoSize = true;
             this.lblPrecioLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblPrecioLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblPrecioLista.Location = new System.Drawing.Point(619, 0);
+            this.lblPrecioLista.Location = new System.Drawing.Point(618, 0);
             this.lblPrecioLista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrecioLista.Name = "lblPrecioLista";
             this.lblPrecioLista.Size = new System.Drawing.Size(48, 17);
@@ -430,7 +433,7 @@
             this.lblCategoriaLista.AutoSize = true;
             this.lblCategoriaLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblCategoriaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblCategoriaLista.Location = new System.Drawing.Point(376, 0);
+            this.lblCategoriaLista.Location = new System.Drawing.Point(375, 0);
             this.lblCategoriaLista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoriaLista.Name = "lblCategoriaLista";
             this.lblCategoriaLista.Size = new System.Drawing.Size(69, 17);
@@ -443,7 +446,7 @@
             this.lblDescripLista.AutoSize = true;
             this.lblDescripLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblDescripLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblDescripLista.Location = new System.Drawing.Point(191, 0);
+            this.lblDescripLista.Location = new System.Drawing.Point(190, 0);
             this.lblDescripLista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripLista.Name = "lblDescripLista";
             this.lblDescripLista.Size = new System.Drawing.Size(82, 17);
@@ -482,7 +485,7 @@
             this.lblStockLista.AutoSize = true;
             this.lblStockLista.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblStockLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblStockLista.Location = new System.Drawing.Point(535, 0);
+            this.lblStockLista.Location = new System.Drawing.Point(534, 0);
             this.lblStockLista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStockLista.Name = "lblStockLista";
             this.lblStockLista.Size = new System.Drawing.Size(43, 17);
@@ -512,6 +515,17 @@
             this.lblIndexNombre.TabIndex = 25;
             this.lblIndexNombre.Text = "Nom";
             // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(407, 151);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.Height = 24;
+            this.dgvProductos.Size = new System.Drawing.Size(240, 150);
+            this.dgvProductos.TabIndex = 23;
+            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
+            // 
             // frmProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -521,7 +535,7 @@
             this.Controls.Add(this.gBoxInventario);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProyecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Inventario";
@@ -531,6 +545,7 @@
             this.gBoxInventario.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -571,6 +586,7 @@
         private System.Windows.Forms.Label lblIndexCodigo;
         private System.Windows.Forms.Label lblIndexNombre;
         private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.DataGridView dgvProductos;
     }
 }
 
