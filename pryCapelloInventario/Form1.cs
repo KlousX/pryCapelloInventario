@@ -111,6 +111,15 @@ namespace pryCapelloInventario
         {
             dgvProductos.DataSource = null;
             dgvProductos.DataSource = productos;
+
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+            dgvProductos.Columns["Código"].Width = 60;
+            dgvProductos.Columns["Nombre"].Width = 90;
+            dgvProductos.Columns["Descripción"].Width = 120;
+            dgvProductos.Columns["Categoria"].Width = 90;
+            dgvProductos.Columns["Stock"].Width = 60;
+            dgvProductos.Columns["Precio"].Width = 70;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -120,43 +129,43 @@ namespace pryCapelloInventario
 
             if (txtCode.Text == "")
                 {
-                MessageBox.Show("Ingrese el código");
+                MessageBox.Show("Ingrese el código", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCode.Focus();
                 return;
                 }
             if (txtNombre.Text == "")
               {
-               MessageBox.Show("Ingrese el nombre");
+               MessageBox.Show("Ingrese el nombre", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                txtNombre.Focus();
                 return;
               }
             if (txtDecripcion.Text == "")
                 {
-                 MessageBox.Show("Ingrese la descripción");
+                 MessageBox.Show("Ingrese la descripción", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                  txtDecripcion.Focus();
                 return;
             }
             if (maskedTxtIngreso.Text == "")
                 {
-                MessageBox.Show("Ingrese la cantidad de ingreso de stock");
+                MessageBox.Show("Ingrese la cantidad de ingreso de stock", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 maskedTxtIngreso.Focus();
                 return;
             }
             if (maskedTxtEgreso.Text == "")
                 {
-                 MessageBox.Show("Ingrese la cantidad de egreso de stock");
+                 MessageBox.Show("Ingrese la cantidad de egreso de stock", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                  maskedTxtEgreso.Focus();
                 return;
             }
             if (maskedTxtPrecio.Text == "")
             {
-                MessageBox.Show("Ingrese el precio");
+                MessageBox.Show("Ingrese el precio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 maskedTxtPrecio.Focus();
                 return;
             }
-        p.Codigo = txtCode.Text;
+        p.Código = txtCode.Text;
         p.Nombre = txtNombre.Text;
-        p.Descripcion = txtDecripcion.Text;
+        p.Descripción = txtDecripcion.Text;
         p.Categoria = cboCategoria.Text;
 
         int ingreso ;
@@ -185,15 +194,6 @@ namespace pryCapelloInventario
         
         productos.Add(p);
         CargarGrilla();
-        
-            
-
-        lblIndexCodigo.Text = p.Codigo;
-        lblIndexNombre.Text = p.Nombre;
-        lblIndexDescripcion.Text = p.Descripcion;
-        lblIndexCategoria.Text = p.Categoria;
-        lblIndexIngreso.Text = p.Stock.ToString();
-        lblIndexPrecio.Text = p.Precio.ToString();
 
         txtCode.Text = "";
         txtDecripcion.Text = "";
@@ -227,6 +227,18 @@ namespace pryCapelloInventario
             {
                 return;
             }
+
+            DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
+
+            txtCode.Text = fila.Cells["Código"].Value.ToString();
+            txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
+            txtDecripcion.Text = fila.Cells["Descripción"].Value.ToString();
+            cboCategoria.Text = fila.Cells["Categoría"].Value.ToString();
+            maskedTxtPrecio.Text = fila.Cells["Precio"].Value.ToString();
+            lblStockActual.Text = fila.Cells["Stock"].Value.ToString();
+
+            maskedTxtIngreso.Text = "";
+            maskedTxtEgreso.Text = "";
         }
     }
 }
