@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProyecto));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gBoxInventario = new System.Windows.Forms.GroupBox();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -51,9 +50,9 @@
             this.lblCódigo = new System.Windows.Forms.Label();
             this.txtDecripcion = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
+            this.btnGrilla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBoxInventario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -68,6 +67,7 @@
             // 
             // gBoxInventario
             // 
+            this.gBoxInventario.Controls.Add(this.btnGrilla);
             this.gBoxInventario.Controls.Add(this.cboCategoria);
             this.gBoxInventario.Controls.Add(this.txtNombre);
             this.gBoxInventario.Controls.Add(this.lblNombre);
@@ -96,17 +96,6 @@
             this.gBoxInventario.TabStop = false;
             this.gBoxInventario.Text = "Inventario";
             this.gBoxInventario.Enter += new System.EventHandler(this.gBoxInventario_Enter);
-            // 
-            // dgvProductos
-            // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(33, 422);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(707, 129);
-            this.dgvProductos.TabIndex = 23;
-            this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // cboCategoria
             // 
@@ -196,11 +185,11 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(559, 325);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(578, 353);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 38);
+            this.btnCancelar.Size = new System.Drawing.Size(105, 27);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -208,11 +197,11 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnRegistrar.Location = new System.Drawing.Point(429, 325);
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(448, 353);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(121, 38);
+            this.btnRegistrar.Size = new System.Drawing.Size(105, 27);
             this.btnRegistrar.TabIndex = 8;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -337,12 +326,23 @@
             this.lblProducto.Text = "Descripción:";
             this.lblProducto.Click += new System.EventHandler(this.lblProducto_Click);
             // 
+            // btnGrilla
+            // 
+            this.btnGrilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrilla.Location = new System.Drawing.Point(14, 353);
+            this.btnGrilla.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGrilla.Name = "btnGrilla";
+            this.btnGrilla.Size = new System.Drawing.Size(105, 27);
+            this.btnGrilla.TabIndex = 23;
+            this.btnGrilla.Text = "Lista";
+            this.btnGrilla.UseVisualStyleBackColor = true;
+            this.btnGrilla.Click += new System.EventHandler(this.btnGrilla_Click);
+            // 
             // frmProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 553);
-            this.Controls.Add(this.dgvProductos);
+            this.ClientSize = new System.Drawing.Size(770, 450);
             this.Controls.Add(this.gBoxInventario);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -354,7 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gBoxInventario.ResumeLayout(false);
             this.gBoxInventario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,7 +381,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.Button btnGrilla;
     }
 }
 

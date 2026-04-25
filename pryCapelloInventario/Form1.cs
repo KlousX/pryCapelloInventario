@@ -107,20 +107,6 @@ namespace pryCapelloInventario
         {
 
         }
-        private void CargarGrilla()
-        {
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = productos;
-
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-
-            dgvProductos.Columns["Código"].Width = 60;
-            dgvProductos.Columns["Nombre"].Width = 90;
-            dgvProductos.Columns["Descripción"].Width = 120;
-            dgvProductos.Columns["Categoria"].Width = 90;
-            dgvProductos.Columns["Stock"].Width = 60;
-            dgvProductos.Columns["Precio"].Width = 70;
-        }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -193,7 +179,6 @@ namespace pryCapelloInventario
         p.Precio = precio;
         
         productos.Add(p);
-        CargarGrilla();
 
         txtCode.Text = "";
         txtDecripcion.Text = "";
@@ -221,24 +206,10 @@ namespace pryCapelloInventario
 
         }
 
-        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnGrilla_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-
-            DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
-
-            txtCode.Text = fila.Cells["Código"].Value.ToString();
-            txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
-            txtDecripcion.Text = fila.Cells["Descripción"].Value.ToString();
-            cboCategoria.Text = fila.Cells["Categoría"].Value.ToString();
-            maskedTxtPrecio.Text = fila.Cells["Precio"].Value.ToString();
-            lblStockActual.Text = fila.Cells["Stock"].Value.ToString();
-
-            maskedTxtIngreso.Text = "";
-            maskedTxtEgreso.Text = "";
+            frmGrilla grilla = new frmGrilla(productos);
+            grilla.ShowDialog();
         }
     }
 }
