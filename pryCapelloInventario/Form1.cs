@@ -125,10 +125,10 @@ namespace pryCapelloInventario
                txtNombre.Focus();
                 return;
               }
-            if (txtDecripcion.Text == "")
+            if (txtDescripcion.Text == "")
                 {
                  MessageBox.Show("Ingrese la descripción", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                 txtDecripcion.Focus();
+                 txtDescripcion.Focus();
                 return;
             }
             if (maskedTxtIngreso.Text == "")
@@ -151,7 +151,7 @@ namespace pryCapelloInventario
             }
         p.Código = txtCode.Text;
         p.Nombre = txtNombre.Text;
-        p.Descripción = txtDecripcion.Text;
+        p.Descripción = txtDescripcion.Text;
         p.Categoria = cboCategoria.Text;
 
         int ingreso ;
@@ -181,7 +181,7 @@ namespace pryCapelloInventario
         productos.Add(p);
 
         txtCode.Text = "";
-        txtDecripcion.Text = "";
+        txtDescripcion.Text = "";
         txtNombre.Text = "";
         cboCategoria.Text = "";
         maskedTxtIngreso.Text = "";
