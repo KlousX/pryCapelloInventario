@@ -187,6 +187,7 @@ namespace pryCapelloInventario
         maskedTxtIngreso.Text = "";
         maskedTxtEgreso.Text = "";
         maskedTxtPrecio.Text = "";
+        cboCategoria.SelectedIndex = -1;
 
             MessageBox.Show("Producto registrado con exito");
         }
